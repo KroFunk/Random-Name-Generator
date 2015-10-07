@@ -6,7 +6,9 @@ require ('../config/config.php');
 <title>Random Name Generator | &copy; Robin Wright 2015</title>
 <link href='../styles/admin.css.php' rel='stylesheet' type='text/css'>
 <script>
-
+window.onload = function PageLoaded(){
+	CreateContainers();
+}
 function CreateContainers() {
 var xmlhttp;
 if (window.XMLHttpRequest)
@@ -25,11 +27,10 @@ xmlhttp.onreadystatechange=function()
     }
   }
   
-xmlhttp.open("POST","UpdateOptions.php",true);
+xmlhttp.open("POST","ajax.php",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 xmlhttp.send("Action=<?PHP echo $_GET['Action']?>");
 }
-
 
 //Searchbox aesthetics
 var BnClicked = false;
@@ -54,6 +55,11 @@ BnClicked = true;
 }
 }
 
+
+function OpenGroup(GroupID) {
+	//do some mad cool stuff.
+	alert('You doubleclicked ' + GroupID);
+}
 </script>
 </head>
 <body style="margin:0px; padding:0px;">

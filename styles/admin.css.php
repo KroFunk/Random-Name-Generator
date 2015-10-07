@@ -635,6 +635,12 @@ transition: 0.5s;
 	-webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     transition: 0.5s;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 #add:hover {
 	box-shadow:#111 2px 2px 15px;
@@ -655,6 +661,12 @@ transition: 0.5s;
 	-webkit-transition: 0.1s;
     -moz-transition: 0.1s;
     transition: 0.1s;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .ListItem:hover {
 	background-color:#F1FAF6;
@@ -663,16 +675,34 @@ transition: 0.5s;
 	Float:left;
 	width:200px;
 	text-align:left;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .ListDescription {
 	Float:left;
 	width:200px;
 	text-align:left;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .ListTools {
 	Float:right;
 	width:200px;
 	text-align:Right;
+	    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .clear {
 	clear:both;
