@@ -130,7 +130,8 @@ border-bottom:1px solid #4A4A49;
 }
 #Path {
 color:#fff;
-font-size:12px;
+font-size:24px;
+margin-top:5px;
 }
 #Functions {
 color:#fff;

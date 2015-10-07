@@ -26,14 +26,29 @@ if (mysqli_num_rows($query) < 1) {
 }
 else {
 	while($result = mysqli_fetch_array($query)){
-	echo "<div class='ListItem' ondblclick='OpenGroup(" . $result['GroupID'] . ")' ><div class='ListName'>" . $result['GroupName'] . "</div><div class='ListDescription'>" . $result['Description'] . "</div><div class='ListTools'>Tools</div><p class='clear'</p></div>";
+	echo "<div class='ListItem' ondblclick='OpenGroup(" . $result['GroupID'] . "," . '"' . $result['GroupName'] . '"' . ")' ><div class='ListName'>" . $result['GroupName'] . "</div><div class='ListDescription'>" . $result['Description'] . "</div><div class='ListTools'>Tools</div><p class='clear'</p></div>";
 	}
 }
 }
 
 
 
+//////////\\\\\\\\\\
+// Populate Names \\
+//////////\\\\\\\\\\
 
+if($_POST['Action'] == 'populatenames' & isset($_POST['GroupID'])){
+$GroupID = $_POST['GroupID'];
+$query = mysqli_query($con, "SELECT * FROM `names` WHERE `GroupID` = $GroupID") or die ('Unable to execute query. '. mysqli_error($con));
+if (mysqli_num_rows($query) < 1) {
+		echo "<div class='ListItem'><div style='text-align:center'>This group contains no names, use the + button to add one!</div><p class='clear'></p></div>";
+}
+else {
+	while($result = mysqli_fetch_array($query)){
+	echo "<div class='ListItem'><div class='ListName'>" . $result['Name'] . "</div><div class='ListDescription'>" . "</div><div class='ListTools'>Tools</div><p class='clear'</p></div>";
+	}
+}
+}
 
 
 }
@@ -42,6 +57,21 @@ if(isset($_GET['Action'])){
 //////////\\\\\\\\\
 // Create Editor \\
 //////////\\\\\\\\\
+
+if($_GET['Action'] == 'AddGroups'){
+	echo "<form action=''>
+	<table>
+	<tr>
+	<td style='text-align:right;'><label>Group Name:</label></td>
+	<td><input type='textbox' name='groupname' /></td>
+	</tr><tr>
+	<td style='text-align:right;'><label>Group Description:</label></td>
+	<td><input type='textbox' name='description' /></td>
+	</tr><tr>
+	<td colspan='2' style='text-align:right;'><input type='button' value='Create Group'></td>
+	</tr>
+	</table>";
+}
 
 }
 
