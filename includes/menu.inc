@@ -11,6 +11,6 @@
 
 <div id="MainMenu">
 
-<div id="Path">Random Name Generator &rsaquo; <a style="text-decoration:none; color:white;" href="javascript:void(0);" onclick="BackToGroups();">Groups</a></div>
+<div id="Path"><a style="text-decoration:none; color:white;" href="javascript:void(0);" onclick="BackToGroups();">Groups</a></div>
 
 </div>

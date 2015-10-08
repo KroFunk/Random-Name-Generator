@@ -327,6 +327,26 @@ input {
 outline:0px none;
 }
 
+.FormText {
+	padding: 10px;
+	border:0px;
+	border-bottom:2px solid rgb(12, 45, 78);
+	margin:5px;
+	margin-top:0px;
+	font-size:14px;
+	background:rgba(255,255,255,0);
+	cursor: text;
+}
+
+.FormSubmit {
+	padding: 10px;
+	border:0px;
+	margin:5px;
+	font-size:14px;
+	color:rgb(12, 45, 78);
+	background:rgba(255,255,255,0);
+	cursor: pointer;
+}
 
 .group {
 background:#aaa;

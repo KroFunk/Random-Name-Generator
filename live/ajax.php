@@ -50,27 +50,39 @@ else {
 }
 }
 
+if($_POST['Action'] == 'InsertGroup'){
+	$GroupName = $_POST['groupname'];
+	$Description = $_POST['description'];
+	$UserID = $_SESSION['CUID'];
+mysqli_query($con, "INSERT INTO `randomnames`.`groups` (`GroupID`, `UserID`, `GroupName`, `Description`) VALUES (NULL, '$UserID', '$GroupName', '$Description');") or die ('Unable to execute query. '. mysqli_error($con));
+echo "group created";
+echo "<script>parent.closewrapper();parent.BackToGroups();</script>";
+}
+
+
 
 }
 if(isset($_GET['Action'])){
 
-//////////\\\\\\\\\
-// Create Editor \\
-//////////\\\\\\\\\
+////////////\\\\\\\\\\\
+// Create Group Form \\
+////////////\\\\\\\\\\\
 
 if($_GET['Action'] == 'AddGroups'){
-	echo "<form action=''>
+	echo "<div align='center' style='margin-top:20px;'><form action='' method='POST'>
 	<table>
 	<tr>
-	<td style='text-align:right;'><label>Group Name:</label></td>
-	<td><input type='textbox' name='groupname' /></td>
-	</tr><tr>
-	<td style='text-align:right;'><label>Group Description:</label></td>
-	<td><input type='textbox' name='description' /></td>
-	</tr><tr>
-	<td colspan='2' style='text-align:right;'><input type='button' value='Create Group'></td>
+	<td colspan='2' style='text-align:left;'><h2>Create new Group</h2></td>
 	</tr>
-	</table>";
+	<tr>
+	<td><input type='textbox' name='groupname' class='FormText' placeholder='Group Name' required /></td>
+	<td><input type='textbox' name='description' class='FormText' placeholder='Group Description' required /></td>
+	</tr><tr>
+	<td colspan='2' style='text-align:right;'><input type='submit' value='Create Group' class='FormSubmit'></td>
+	</tr>
+	</table>
+	<input type='hidden' name='Action' value='InsertGroup' />
+	</form></div>";
 }
 
 }
