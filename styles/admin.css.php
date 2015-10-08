@@ -338,14 +338,32 @@ outline:0px none;
 	cursor: text;
 }
 
+.FormCancel {
+	padding: 10px;
+	padding-right:0px;
+	border:0px;
+	margin:0px;
+	margin-top:10px;
+	margin-right:0px;
+	font-size:14px;
+	color:rgb(0, 0, 0);
+	background:rgba(255,255,255,0);
+	cursor: pointer;
+	font-weight:600;
+}
+
 .FormSubmit {
 	padding: 10px;
+	padding-right:0px;
 	border:0px;
-	margin:5px;
+	margin:0px;
+	margin-top:10px;
+	/*margin-right:0px;*/
 	font-size:14px;
 	color:rgb(12, 45, 78);
 	background:rgba(255,255,255,0);
 	cursor: pointer;
+	font-weight:600;
 }
 
 .group {

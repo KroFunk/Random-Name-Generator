@@ -50,6 +50,11 @@ else {
 }
 }
 
+
+/////////\\\\\\\\\
+// Create Group \\
+/////////\\\\\\\\\
+
 if($_POST['Action'] == 'InsertGroup'){
 	$GroupName = $_POST['groupname'];
 	$Description = $_POST['description'];
@@ -59,7 +64,18 @@ echo "group created";
 echo "<script>parent.closewrapper();parent.BackToGroups();</script>";
 }
 
+/////////\\\\\\\\\
+// Create Name \\
+/////////\\\\\\\\\
 
+if($_POST['Action'] == 'InsertName'){
+	$GroupName = $_POST['groupname'];
+	$Description = $_POST['description'];
+	$UserID = $_SESSION['CUID'];
+mysqli_query($con, "") or die ('Unable to execute query. '. mysqli_error($con));
+echo "name created";
+echo "<script>parent.closewrapper();parent.BackToGroups();</script>";
+}
 
 }
 if(isset($_GET['Action'])){
@@ -72,16 +88,32 @@ if($_GET['Action'] == 'AddGroups'){
 	echo "<div align='center' style='margin-top:20px;'><form action='' method='POST'>
 	<table>
 	<tr>
-	<td colspan='2' style='text-align:left;'><h2>Create new Group</h2></td>
+	<td colspan='2' style='text-align:left;'><h2>Create New Group</h2></td>
 	</tr>
 	<tr>
 	<td><input type='textbox' name='groupname' class='FormText' placeholder='Group Name' required /></td>
 	<td><input type='textbox' name='description' class='FormText' placeholder='Group Description' required /></td>
 	</tr><tr>
-	<td colspan='2' style='text-align:right;'><input type='submit' value='Create Group' class='FormSubmit'></td>
+	<td colspan='2' style='text-align:right;'><input type='button' onclick='parent.closewrapper();parent.BackToGroups();' value='Cancel' class='FormCancel'>&nbsp;<input type='submit' value='Create Group' class='FormSubmit'></td>
 	</tr>
 	</table>
 	<input type='hidden' name='Action' value='InsertGroup' />
+	</form></div>";
+}
+if($_GET['Action'] == 'AddNames'){
+	echo "<div align='center' style='margin-top:20px;'><form action='' method='POST'>
+	<table>
+	<tr>
+	<td colspan='2' style='text-align:left;'><h2>Create New Name</h2></td>
+	</tr>
+	<tr>
+	<td><input type='textbox' name='groupname' class='FormText' placeholder='Name' required /></td>
+	<td><input type='textbox' name='description' class='FormText' placeholder='Description' required /></td>
+	</tr><tr>
+	<td colspan='2' style='text-align:right;'><input type='button' onclick='parent.closewrapper();parent.BackToGroups();' value='Cancel' class='FormCancel'>&nbsp;<input type='submit' value='Create Name' class='FormSubmit'></td>
+	</tr>
+	</table>
+	<input type='hidden' name='Action' value='InsertName' />
 	</form></div>";
 }
 
