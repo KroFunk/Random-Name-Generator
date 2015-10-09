@@ -93,6 +93,16 @@ document.getElementById('Iframe').src = url;
 //});
 }
 
+function OpenTools(ButtonID) {
+	var tools = document.getElementById('ToolLinks');
+	var toolsBTNID = 'tools' + ButtonID;
+	var toolsBTN = document.getElementById(toolsBTNID);
+
+	tools.className='block';
+	tools.style.top = (toolsBTN.offsetTop - 425);
+	
+}
+
 function closewrapper() { //will close the window without refreshing the page. 
 // hide popup elements
 document.getElementById('iframewrapper').className='none'; 
@@ -111,9 +121,15 @@ location.reload();
 
 
 
+
 </div>
 
+
+
+
 <div onclick="openwrapper('ajax.php?Action=Add'+CurrentlyViewing,0,200)" id='add'>+</div>
+
+
 <!--
 ###########################################################################
 ######################### Iframe Section  Start ###########################

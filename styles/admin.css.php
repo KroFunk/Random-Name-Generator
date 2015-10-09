@@ -684,6 +684,18 @@ transition: 0.5s;
 #add:hover {
 	box-shadow:#111 2px 2px 15px;
 }
+#ToolLinks {
+	background-color: #fff;
+	border:1px solid #ccc;
+	border-bottom:0px;
+	width:150px;
+	position:relative;
+	float:right;
+	top:0px;
+	left:-50px;
+	z-index:9999!important;
+	box-shadow:#999 0px 0px 5px;
+}
 #list {
 	background-color: #fff;
 	border:1px solid #ccc;
@@ -747,4 +759,9 @@ transition: 0.5s;
 	clear:both;
 	margin:0px;
 	padding:0px;
+}
+.Tools {
+	height:20px;
+	cursor:pointer;
+	opacity:.8;
 }

@@ -26,8 +26,16 @@ if (mysqli_num_rows($query) < 1) {
 }
 else {
 	while($result = mysqli_fetch_array($query)){
-	echo "<div class='ListItem' ondblclick='OpenGroup(" . $result['GroupID'] . "," . '"' . $result['GroupName'] . '"' . ")' ><div class='ListName'>" . $result['GroupName'] . "</div><div class='ListDescription'>" . $result['Description'] . "</div><div class='ListTools'>Tools</div><p class='clear'</p></div>";
+	echo "<div class='ListItem' ondblclick='OpenGroup(" . $result['GroupID'] . "," . '"' . $result['GroupName'] . '"' . ")' >
+	<div class='ListName'>" . $result['GroupName'] . "</div><div class='ListDescription'>" . $result['Description'] . "</div>
+	<div class='ListTools'><img id='tools" . $result['GroupID'] . "' onclick='OpenTools(" . $result['GroupID'] . ")' class='Tools' src='" . $Location . "/includes/tools.png' /></div>
+	<p class='clear'</p></div>";
 	}
+	echo "<div id='ToolLinks' class='none'>
+<div class='ListItem'>Favourite</div>
+<div class='ListItem'>Edit Group</div>
+<div class='ListItem'>Delete Group</div>
+</div>";
 }
 }
 
